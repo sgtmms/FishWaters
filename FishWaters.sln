@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FishWaters", "FishWaters\FishWaters.csproj", "{69E7025F-01D1-4F83-9DF0-F3F8BA391120}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestFishWaters", "UnitTestFishWaters\UnitTestFishWaters.csproj", "{58F6E1D2-8D83-494E-9352-EF427681A6EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69E7025F-01D1-4F83-9DF0-F3F8BA391120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69E7025F-01D1-4F83-9DF0-F3F8BA391120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69E7025F-01D1-4F83-9DF0-F3F8BA391120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69E7025F-01D1-4F83-9DF0-F3F8BA391120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F6E1D2-8D83-494E-9352-EF427681A6EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F6E1D2-8D83-494E-9352-EF427681A6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F6E1D2-8D83-494E-9352-EF427681A6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F6E1D2-8D83-494E-9352-EF427681A6EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED36D841-953C-46D6-A63F-3238BE4562A7}
+	EndGlobalSection
+EndGlobal

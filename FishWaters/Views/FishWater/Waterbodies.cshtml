@@ -1,0 +1,41 @@
+﻿@model List<Waterbody>
+
+<h1>Lakes</h1>
+
+<a class="btn btn-success btn-info" asp-controller="FishWater" asp-action="CreateWaterbody">Add Waterbody</a>
+<br />
+<br />
+
+<div class="container">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>State</th>
+                <th>County</th>
+                <th>Lake Name</th>
+                <th>Google Map Link</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var waterbody in Model)
+            {
+                <tr>
+                    <td>@waterbody.State</td>
+                    <td>@waterbody.County</td>
+                    <td>@waterbody.LakeName</td>
+                    <td>
+                        <a class="nav-link"
+                           target="_blank"
+                           href="https://www.google.com/maps/&#64;@waterbody.Latitude,@waterbody.Longitude,15z">@waterbody.LakeName</a>
+                    </td>
+
+                </tr>
+
+
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,47 @@
+﻿@model List<Waterbody>
+
+<h1>Waterbodies with Fish</h1>
+
+
+<br />
+<br />
+
+<div class="container">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>State</th>
+                <th>County</th>
+                <th>Lake Name</th>
+                <th>Fish Types</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var waterbody in Model)
+            {
+                <tr>
+                    <td>@waterbody.State</td>
+                    <td>@waterbody.County</td>
+                    <td>@waterbody.LakeName</td>
+                    <td>
+                        @foreach (var fishWater in waterbody.FishWaters)
+                        {
+                            <p>
+                                @fishWater.Fishtype.FishtypeName
+
+
+                            </p>
+                        }
+
+                    </td>
+
+                </tr>
+
+
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+﻿@model FishWaters.Models.Fishtype
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewBag.Title = "Add Fishtype";
+    Layout = "_Layout";
+}
+<h2>FishType</h2>
+
+<h4>Fishtype</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateFishtype">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FishtypeName" class="control-label"></label>
+                <input asp-for="FishtypeName" class="form-control" />
+                <span asp-validation-for="FishtypeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Fishtypes">Back to List</a>
+</div>
+
