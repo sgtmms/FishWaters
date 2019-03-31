@@ -8,6 +8,8 @@ namespace FishWaters.Data
 {
     public abstract class TextReader
     {
+
+        HashSet<Fishtype> allTypes = new HashSet<Fishtype>();
         public abstract void ReadFile();
 
         public abstract Dictionary<Waterbody, List<Fishtype>> GetLakeData(); 
@@ -28,6 +30,8 @@ namespace FishWaters.Data
                 Fishtype fish = new Fishtype();
                 fish.FishtypeName = fishName;
                 fishList.Add(fish);
+
+                allTypes.Add(fish);
 
 
             }

@@ -29,6 +29,8 @@ namespace FishWaters.Data.TextSeeds
 
             List<Fishtype> fishlist = null;
 
+            
+
             while ((line = reader.ReadLine()) != null)
             {
                 count += 1;
@@ -58,7 +60,7 @@ namespace FishWaters.Data.TextSeeds
                     water.State = words[6].Trim('"');
 
                     fishlist = this.ListFishes(words[4].Trim('"'));
-                    //If Lake is in 2 counties split county string and add both countis for that lake
+                    //If Lake is in 2 counties split county string and add both counties for that lake
 
                     int numberOfCounties = water.County.Split().Length;
 
@@ -97,12 +99,12 @@ namespace FishWaters.Data.TextSeeds
         }
 
     public override Dictionary<Waterbody, List<Fishtype>> GetLakeData()
-        {
+    {
 
-            return this.WaterbodiesMappedToFishes;
-        }
-
-
+       return this.WaterbodiesMappedToFishes;
     }
+
+
     }
 }
+
