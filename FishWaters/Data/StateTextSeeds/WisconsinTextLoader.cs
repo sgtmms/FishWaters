@@ -12,8 +12,6 @@ namespace FishWaters.Data.TextSeeds
     {
         Dictionary<Waterbody, List<Fishtype>> WaterbodiesMappedToFishes;
 
-        List<Waterbody> waters = new List<Waterbody>();
-
         List<Fishtype> fishtypes = new List<Fishtype>();
         StreamReader reader = new StreamReader("lakes.csv");
        
@@ -28,6 +26,8 @@ namespace FishWaters.Data.TextSeeds
 
             string line;
             int count = 0;
+
+            List<Fishtype> fishlist = null;
 
             while ((line = reader.ReadLine()) != null)
             {
@@ -57,11 +57,35 @@ namespace FishWaters.Data.TextSeeds
 
                     water.State = words[6].Trim('"');
 
-                    waters.Add(water);
+                    fishlist = this.ListFishes(words[4].Trim('"'));
+                    //If Lake is in 2 counties split county string and add both countis for that lake
+
+                    int numberOfCounties = water.County.Split().Length;
+
+                    if (numberOfCounties > 1) {
+
+                        water.County = water.County.Split()[0];
+                        Waterbody water2 = new Waterbody();
+
+                        water2.LakeName = water.LakeName;
+
+                        water2.Acres = water.Acres;
+
+                        water2.Latitude = water.Latitude;
+
+                        water2.Longitude = water.Longitude;
+
+                        water2.County = water.County;
+
+                        water2.State = water.State;
+
+                        this.WaterbodiesMappedToFishes.Add(water2, fishlist);
 
 
-                    //Console.Write(water.LakeName);
-                    List<Fishtype> fishlist = this.ListFishes(words[4].Trim('"'));
+                    }
+
+
+                    this.WaterbodiesMappedToFishes.Add(water, fishlist);
 
 
                 }
