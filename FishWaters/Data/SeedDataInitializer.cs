@@ -18,7 +18,7 @@ namespace FishWaters.Data
 
         public void Seed()
         {
-            // This is I seed in sample data to your database
+            // This how you seed in sample data to your database
 
             if (!_context.AnyWaterbodiesExist())
             {
@@ -82,6 +82,8 @@ namespace FishWaters.Data
             Fishtype blackCrappie = new Fishtype();
             blackCrappie.FishtypeName = "Black Crappie";
             _context.AddFishtype(blackCrappie);
+
+          
 
 
 
@@ -182,8 +184,6 @@ namespace FishWaters.Data
             FishWater3.FishtypeID = _context.GetFishtypeID("Rainbow Trout");
 
             _context.AddFishWater(FishWater3);
-
-
 
 
 
