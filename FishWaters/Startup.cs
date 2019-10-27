@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,16 +28,19 @@ namespace FishWaters
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddMvc();
+            //services.AddMvc();
+            services.AddRazorPages();
+        
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddScoped<IFishWatersRepository, FishWaterDbContext>();
 
             services.AddDbContext<FishWaterDbContext>(options => 
-                    options.UseSqlServer(Configuration.GetConnectionString("FishWatersLocalConnection")));
-
+                    options.UseNpgsql(Configuration.GetConnectionString("FishWatersLocalConnection")));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -51,9 +54,12 @@ namespace FishWaters
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
+            app.UseRouting();
 
-            app.UseMvc(MyRouting);
+            app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+        });
         }
 
 
