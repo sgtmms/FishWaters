@@ -1,22 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0"/>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.3.2"/>
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0"/>
+    <PackageReference Include="Npgsql.EntityFramework" Version="2.2.7"/>
+    <PackageReference Include="Npgsql" Version="4.1.1"/>
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\FishWaters\FishWaters.csproj" />
+    <ProjectReference Include="..\FishWaters\FishWaters.csproj"/>
   </ItemGroup>
-
   <ItemGroup>
     <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
       <HintPath>..\..\..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
@@ -25,5 +22,4 @@
       <HintPath>..\..\..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.viewfeatures\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
     </Reference>
   </ItemGroup>
-
 </Project>

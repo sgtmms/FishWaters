@@ -34,8 +34,9 @@ namespace FishWaters
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddScoped<IFishWatersRepository, FishWaterDbContext>();
 
-            services.AddDbContext<FishWaterDbContext>(options => 
-                    options.UseNpgsql(Configuration.GetConnectionString("FishWatersLocalConnection")));
+            services.AddEntityFrameworkNpgsql().AddDbContext<FishWaterDbContext>(opt =>
+                    opt.UseNpgsql(Configuration.GetSection("ConnectionStrings")["FishWatersLocalConnection"]));
+                    //options.UseNpgsql(Configuration.GetConnectionString("FishWatersLocalConnection")));
             
         }
 
